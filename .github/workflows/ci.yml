@@ -1,0 +1,28 @@
+name: ci
+on: 
+  push:
+    branches:
+      -develop
+  pull_request:
+    branches:
+      -develop
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: welcome step
+        run: echo "welcome to github actions"
+      - name: Clone Repo
+        uses: actions/checkout@v4
+      - name: Repo Info
+        run:  |
+          echo "Following is the info of repo"
+          echo "Repo  Name: :${{github.repository}}"
+          echo "Event Name: :${{github.event_name}}"
+          git branch testing
+          git branch 
+          git log 
+          git -v
+          git config --local --list
+
+       
